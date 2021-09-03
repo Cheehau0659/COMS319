@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G13 Project</title>
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+
+    /* The Instruction (background) */
+    .inst {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .inst-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button {
+      border-color: #e7e7e7;
+      color: black;
+      background-color: white;
+      color: black;
+      padding: 14px 28px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 300px;
+
+    }
+
+    .button:hover {
+      background: #e7e7e7;
+    }
+
+
+  </style>
+
+</head>
+<body>
+  <center><h1> Welcome to the FSM and Parse Tree Designer </h1>
+    Use the buttons below to navigate around our site!
+  <br><br>
+  <button id="toParseTreeDesigner" onclick="location.href='FSM-designer/dist/index.html'" class="button" >Parse Tree Designer</button><br>
+  <h>Design A Parse Tree!</h>
+  <br><br>
+  <button id="toFSMDesigner" onclick="location.href='FSM-designer/dist/FSMpage.html'" class="button">FSM Designer</button><br>
+  <h>Design A Finite State Machine!</h>
+  <br><br>
+  <!-- Trigger/Open The instruction -->
+  <button id="myBtn" class="button">Instruction</button><br>
+  <h>Click here to open instructions</h>
+  <br><br>
+  <button id="toFeedback" onclick="location.href='feedbackPage.html'" class="button">Feedback Form</button><br>
+  <h>Let us know how we can improve!</h>
+</center>
+  <!-- The instruction -->
+  <div id="myInst" class="inst">
+
+    <!-- Modal content -->
+    <div class="inst-content">
+      <span class="close">&times;</span>
+      <p><b>Add a state:</b> double-click on the canvas</p>
+      <p><b>Add an arrow:</b> shift-drag on the canvas</p>
+      <p><b>Move something:</b> drag it around</p>
+      <p><b>Delete something:</b> click it and press the delete key (not the backspace key)</p>
+      <p><b>Make accept state:</b> double-click on an existing state</p>
+      <p><b>Type numeric subscript:</b> put an underscore before the number (like "S_0")</p>
+      <p><b>Type greek letter:</b> put a backslash before it (like "\beta")</p>
+      <p style="color:red">Note*</p>
+      <p> JPEG are not avaible in Edge or Internet Explorer </p>
+    </div>
+
+  </div>
+
+</body>
+
+<script>
+  var inst = document.getElementById("myInst");
+  var btn = document.getElementById("myBtn");
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal
+  btn.onclick = function() {
+    inst.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    inst.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == inst) {
+      inst.style.display = "none";
+    }
+  }
+</script>
+
+
+</html>

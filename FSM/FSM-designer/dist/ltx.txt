@@ -1,0 +1,7 @@
+% Change graphicspath to the picture file path
+% Change includegraphics to the picture name
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\begin{document}
+\includegraphics{universe}
+\end{document}
